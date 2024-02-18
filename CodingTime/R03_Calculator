@@ -1,0 +1,36 @@
+package CodingTime;
+
+import java.util.Scanner;
+
+public class R03_Calculator {
+    public static void main(String[] args) {
+
+        Scanner scan = new Scanner(System.in);
+        double num1, num2, action;
+        System.out.print("Please enter first number: ");
+        num1 = scan.nextDouble();
+        System.out.print("\nPlease enter second number: ");
+        num2 = scan.nextDouble();
+        System.out.println("\nPlease select the action you want to take");
+        System.out.println("1- Collection\n2- Subtraction\n3- Multiplication\n4- Division");
+        System.out.print("Your action: ");
+        action = scan.nextDouble();
+
+        if (action == 1) {
+            System.out.println("Collection: " + (num1 + num2));
+        } else if (action == 2) {
+            System.out.println("Subtraction: " + (num1 - num2));
+        } else if (action == 3) {
+            System.out.println("Multiplication: " + num1 * num2);
+        } else if (action == 4) {
+            if (num2 == 0) { // Division by zero error check
+                System.out.println("Cannot divide by zero");
+            } else {
+                System.out.println("Division: " + num1 / num2);
+            }
+        } else {
+            System.out.println("Exiting program... The number entered is an invalid transaction: "
+            + action);
+        }
+    }
+}
